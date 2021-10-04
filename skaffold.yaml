@@ -1,0 +1,20 @@
+apiVersion: skaffold/v2beta23
+kind: Config
+metadata:
+  name: ecom
+deploy:
+  kubectl:
+    manifests:
+      - ./infra/k8s/*
+build:
+  local:
+    push: false
+  artifacts:
+    - image: asif47/auth
+      context: auth
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "src/**/*.ts"
+            dest: .
