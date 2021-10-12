@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: asif47/ecom-client
+          image: us.gcr.io/ticketing-dev-328818/client
 ---
 apiVersion: v1
 kind: Service
