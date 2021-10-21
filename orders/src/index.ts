@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-
 import { app } from "./app";
 import { natsWrapper } from "./nats-wrapper";
 
@@ -34,7 +33,7 @@ const start = async () => {
     process.on("SIGTERM", () => natsWrapper.client.close());
 
     await mongoose.connect(process.env.MONGO_URI);
-    console.log("Connected to MongoDb");
+    console.log("Connected to MongoDb!");
   } catch (err) {
     console.error(err);
   }
